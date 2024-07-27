@@ -4,7 +4,7 @@ import numpy as np
 
 
 def load_model():
-    with open('softwareSalaryPredictor-1/saved_steps.pkl', 'rb') as file:
+    with open('saved_steps.pkl', 'rb') as file:
         data = pickle.load(file)
     return data
 
