@@ -48,3 +48,15 @@ def show_predict_page():
     country = st.selectbox("Country", countries)
     education = st.selectbox("Education Level", education)
     expericence = st.slider("Years of Experience", 0, 50, 3)
+
+    ok = st.button("Calculate Salary")
+    if ok: # if true
+        X = np.array([[country, education, expericence ]])
+        X[:, 0] = le_country.transform(X[:,0])
+        X[:, 1] = le_education.transform(X[:,1])
+        X = X.astype(float)
+
+        salary = regressor.predict(X)
+        st.subheader(f"The estimated salary is ${salary[0]:.2f}") 
+
+        
