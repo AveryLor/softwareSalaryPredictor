@@ -11,12 +11,14 @@ def shorten_categories(categories, cutoff):
             categorical_map[categories.index[i]] = 'Other'
     return categorical_map
 
+
 def clean_experience(x):
     if x ==  'More than 50 years':
         return 50
     if x == 'Less than 1 year':
         return 0.5
     return float(x)
+
 
 def clean_education(x):
     if 'Bachelor’s degree' in x:
@@ -26,6 +28,7 @@ def clean_education(x):
     if 'Professional degree' in x or 'Other doctoral' in x:
         return 'Post grad'
     return 'Less than a Bachelors'
+
 
 @st.cache
 def load_data():
