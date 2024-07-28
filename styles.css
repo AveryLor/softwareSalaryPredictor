@@ -1,0 +1,22 @@
+body {
+    display: flex;
+}
+
+#sidebar {
+    width: 200px;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+#mainContent {
+    flex: 1;
+    padding: 20px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
